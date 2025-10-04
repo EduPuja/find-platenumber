@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Main from '../components/Main.astro';
+import LoginForm from '../components/LoginForm.astro';
+
+
+
+const userData = await fetch('http:localhost:4000/api/login', {
+	method: 'GET',
+	headers: {
+		'Content-Type': 'application/json',
+	},
+	body: JSON.stringify({
+		username: 'exampleUser',
+		password: 'examplePassword',
+	}),
+});
+---
+
+<Layout title="Home">
+	<Main/> 
+</Layout>
